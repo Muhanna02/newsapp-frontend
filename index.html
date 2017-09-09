@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="dist/css/framework7.ios.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+        <script  src="http://code.jquery.com/jquery-latest.js"></script>
+
+  </head>
+  <body>
+          
+    <script>
+     var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                document.getElementById("demo2").innerHTML = myObj.feed[1].title;        
+                document.getElementById("demo4").innerHTML = myObj.feed[1].description;
+                document.getElementById("demo5").innerHTML = myObj.feed[2].description;
+                document.getElementById("demo6").innerHTML = myObj.feed[3].description;
+                document.getElementById("demo7").innerHTML = myObj.feed[3].description;
+            }
+        };
+        xmlhttp.open("GET", "feed.json", true);
+        xmlhttp.send();
+    </script>
+      
+<!--
+    <div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" data-panel="left" class="open-panel">
+                <i class="icon icon-bars"></i>
+               
+            </a>
+        </div>
+        <div class="center">Center</div>
+        <div class="right">
+            <a href="#" class="link">
+            </a>
+        </div>
+    </div>
+</div>
+-->
+    <!-- Views, and they are tabs-->
+    <!-- We need to set "toolbar-through" class on it to keep space for our tab bar-->
+    <div class="views tabs toolbar-through">
+      <!-- Your first view, it is also a .tab and should have "active" class to make it visible by default-->
+      <div id="view-1" class="view view-main tab active">
+             <div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" data-panel="left" class="open-panel">
+                <i class="icon icon-bars"></i>
+               
+            </a>
+        </div>
+        <div class="center">Center</div>
+        <div class="right">
+            <a href="#" class="link">
+            </a>
+        </div>
+    </div>
+</div>
+        <br>
+        <!-- Pages-->
+        <div class="pages">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index-1" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <style>
+  .facebook-card .card-header {
+    display: block;
+    padding: 10px;
+  }
+  .facebook-card .facebook-avatar {
+    float: left;
+  }
+  .facebook-card .facebook-name {
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .facebook-card .facebook-date {
+    margin-left: 44px;
+    font-size: 13px;
+    color: #8e8e93;
+  }
+  .facebook-card .card-footer {
+    background: #fafafa;
+  }
+  .facebook-card .card-footer a {
+    color: #81848b;
+    font-weight: 500;
+  }
+  .facebook-card .card-content img {
+    display: block;
+  }
+  .facebook-card .card-content-inner {
+    padding: 15px 10px;
+  }  
+</style>
+ 
+<br> 
+<div class="content-block">
+               <font color="WHITE"><marquee id="demo2" direction="left" style="background:black"><p id="demo2"></p></marquee></font>
+              </div>
+<div class="card facebook-card">
+  <div class="card-header">
+    <div class="facebook-avatar"><img src="./assets/images/feed/500x333Parasailing.png" width="34" height="34"></div>
+    <div class="facebook-name">John Doe</div>
+    <div class="facebook-date">Monday at 2:15 PM</div>
+  </div>
+  <div class="card-content">
+    <div class="card-content-inner">
+     <img id="image" src="./assets/images/feed/500x333paddleboarding.png" width="100%" class="lazy lazy-fadein">
+      <p id="demo4">What a nice photo i took yesterday!</p>
+      <img src="..." width="100%">
+      <p class="color-gray">Likes: 112    Comments: 43</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link">Comment</a>
+    <a href="#" class="link">Share</a>
+  </div>
+</div>  <br> 
+<div class="card facebook-card">
+  <div class="card-header">
+    <div class="facebook-avatar"><img src="./assets/images/feed/500x333Parasailing.png" width="34" height="34"></div>
+    <div class="facebook-name">John Doe</div>
+    <div class="facebook-date">Monday at 2:15 PM</div>
+  </div>
+  <div class="card-content">
+    <div class="card-content-inner">
+     <img id="image" src="./assets/images/feed/500x333paddleboarding.png" width="100%" class="lazy lazy-fadein">
+      <p id="demo5">What a nice photo i took yesterday!</p>
+      <img src="..." width="100%">
+      <p class="color-gray">Likes: 112    Comments: 43</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link">Comment</a>
+    <a href="#" class="link">Share</a>
+  </div>
+</div>  <br> 
+        
+    <div class="card facebook-card">
+  <div class="card-header">
+    <div class="facebook-avatar"><img src="./assets/images/feed/500x333Parasailing.png" width="34" height="34"></div>
+    <div class="facebook-name">John Doe</div>
+    <div class="facebook-date">Monday at 2:15 PM</div>
+  </div>
+  <div class="card-content">
+    <div class="card-content-inner">
+     <img id="image" src="./assets/images/feed/500x333paddleboarding.png" width="100%" class="lazy lazy-fadein">
+      <p id="demo6">What a nice photo i took yesterday!</p>
+      <img src="..." width="100%">
+      <p class="color-gray">Likes: 112    Comments: 43</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link">Comment</a>
+    <a href="#" class="link">Share</a>
+  </div>
+</div>  <br> 
+         <div class="card facebook-card">
+  <div class="card-header">
+    <div class="facebook-avatar"><img src="./assets/images/feed/500x333Parasailing.png" width="34" height="34"></div>
+    <div class="facebook-name">John Doe</div>
+    <div class="facebook-date">Monday at 2:15 PM</div>
+  </div>
+  <div class="card-content">
+    <div class="card-content-inner">
+     <img id="image" src="./assets/images/feed/500x333paddleboarding.png" width="100%" class="lazy lazy-fadein">
+      <p id="demo7">What a nice photo i took yesterday!</p>
+      <img src="..." width="100%">
+      <p class="color-gray">Likes: 112    Comments: 43</p>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="link">Like</a>
+    <a href="#" class="link">Comment</a>
+    <a href="#" class="link">Share</a>
+  </div>
+</div>  <br> 
+           
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Second view (for second wrap)-->
+      <div id="view-2" class="view tab">
+        <!-- We can make with view with navigation, let's add Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">Second View</div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+          <div data-page="index-2" class="page">
+            <div class="page-content">
+              <div class="content-block">
+                <p>This is a second view. Lets, for example, have here some internal pages with navbar navigation</p>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="about.html" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title">About Us</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="services.html" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title">Services</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="view-3" class="view tab">
+        <div class="pages">
+          <div data-page="index-3" class="page">
+            <div class="page-content">
+              <div class="content-block-title">Another plain static view</div>
+              <div class="content-block">
+                <div class="content-block-title">Simple Cards</div>
+
+                <div class="card">
+                  <div class="card-header">Card header</div>
+                  <div class="card-content">
+                    <div class="card-content-inner" ><p id="demo4"></p></div>
+                  </div>
+                  <div class="card-footer">Card Footer</div>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="view-4" class="view tab">
+        <div class="pages navbar-fixed">
+          <div data-page="index-4" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Settings</div>
+              </div>
+            </div>
+            <div class="page-content">
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Name</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="Your name">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-email"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">E-mail</div>
+                        <div class="item-input">
+                          <input type="email" placeholder="E-mail">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-url"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">URL</div>
+                        <div class="item-input">
+                          <input type="url" placeholder="URL">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-password"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Password</div>
+                        <div class="item-input">
+                          <input type="password" placeholder="Password">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-tel"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Phone</div>
+                        <div class="item-input">
+                          <input type="tel" placeholder="Phone">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Gender</div>
+                        <div class="item-input">
+                          <select>
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Birth date</div>
+                        <div class="item-input">
+                          <input type="date" placeholder="Birth day" value="2014-04-30">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Switch</div>
+                        <div class="item-input">
+                          <label class="label-switch">
+                            <input type="checkbox">
+                            <div class="checkbox"></div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Slider</div>
+                        <div class="item-input">
+                          <div class="range-slider">
+                            <input type="range" min="0" max="100" value="50" step="0.1">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="content-block">
+                <p>Mauris commodo lacus at nisl lacinia, nec facilisis erat rhoncus. Sed eget pharetra nunc. Aenean vitae vehicula massa, sed sagittis ante. Quisque luctus nec velit dictum convallis. Nulla facilisi. Ut sed erat nisi. Donec non dolor massa. Mauris malesuada dolor velit, in suscipit leo consectetur vitae. Duis tempus ligula non eros pretium condimentum. Cras sed dolor odio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Tabbar-->
+      <div class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner"><a href="#view-1" class="tab-link active"> <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label">Information</span></a><a href="#view-2" class="tab-link"><i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">Inbox</span></a><a href="#view-3" class="tab-link"> <i class="icon tabbar-demo-icon-1"><span class="badge bg-red">4</span></i><span class="tabbar-label">Notification</span></a></div>
+      </div>
+    </div>
+    
+      
+    
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+
+</html>
